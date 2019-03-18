@@ -1,0 +1,51 @@
+spring:
+  datasource:
+    username: zhangzhi
+    password: zz951130
+    url: jdbc:mysql:///miya
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+
+#   数据源其他配置
+    initialSize: 5
+    minIdle: 5
+    maxActive: 20
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT 1 FROM DUAL
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+
+#   配置监控统计拦截的filters，去掉后监控界面sql无法统计，'wall'用于防火墙
+    filters: stat,wall
+    maxPoolPreparedStatementPerConnectionSize: 20
+    useGlobalDataSourceStat: true
+    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
+
+mybatis:
+  config-location: classpath:mybatis/mybatis-config.xml
+  mapper-locations: mybatis/mapper/*.xml
+
+# actuator的监控配置
+management:
+  server:
+    port: 9999
+  endpoint:
+    shutdown:
+      enabled: false
+
+#dubbo配置
+dubbo:
+  application:
+    name: tpva
+  protocol:
+    name: dubbo
+    port: 12345
+    threads: 10
+  registry:
+    protocol: zookeeper
+    address: 192.168.88.97:30000
+    timeout: 30000

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <include resource="org/springframework/boot/logging/logback/base.xml" />
+
+    <appender name="dailyRollingFileAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <File>./logs/app.log</File>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <FileNamePattern>logs/tlabel.%d{yyyy-MM-dd}.log</FileNamePattern>
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <Pattern>%d{yyyy-MM-dd} %d{HH:mm:ss.SSS} %-5level --- [%thread] %logger{36} : %msg %n</Pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+    </appender>
+
+    <springProfile name="develop">
+        <logger name="info.csdc" level="DEBUG" />
+    </springProfile>
+
+    <root level="INFO">
+        <appender-ref ref="dailyRollingFileAppender"/>
+    </root>
+</configuration>

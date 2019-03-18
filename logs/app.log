@@ -1,0 +1,188 @@
+2019-03-18 20:07:03.424 INFO  --- [main] c.a.d.common.logger.LoggerFactory : using logger: com.alibaba.dubbo.common.logger.slf4j.Slf4jLoggerAdapter 
+2019-03-18 20:07:03.427 INFO  --- [main] c.a.b.d.c.e.WelcomeLogoApplicationListener : 
+
+ :: Dubbo Spring Boot (v0.2.0) : https://github.com/apache/incubator-dubbo-spring-boot-project
+ :: Dubbo (v2.6.2) : https://github.com/apache/incubator-dubbo
+ :: Google group : dev@dubbo.incubator.apache.org
+ 
+2019-03-18 20:07:03.429 INFO  --- [main] c.a.b.d.c.e.OverrideDubboConfigApplicationListener : Dubbo Config was overridden by externalized configuration {dubbo.application.name=tpva, dubbo.protocol.name=dubbo, dubbo.protocol.port=12345, dubbo.protocol.threads=10, dubbo.registry.address=192.168.88.97:30000, dubbo.registry.protocol=zookeeper, dubbo.registry.timeout=30000} 
+2019-03-18 20:07:03.508 INFO  --- [main] com.csdc.TlabelApplication : Starting TlabelApplication on csdc-PC with PID 18000 (E:\projects\tlabel\tlabel_service\target\classes started by csdc in E:\projects\tlabel) 
+2019-03-18 20:07:03.509 INFO  --- [main] com.csdc.TlabelApplication : No active profile set, falling back to default profiles: default 
+2019-03-18 20:07:04.075 INFO  --- [main] c.a.d.c.s.c.a.DubboConfigBindingRegistrar : The dubbo config bean definition [name : com.alibaba.dubbo.config.ApplicationConfig#0, class : com.alibaba.dubbo.config.ApplicationConfig] has been registered. 
+2019-03-18 20:07:04.076 INFO  --- [main] c.a.d.c.s.c.a.DubboConfigBindingRegistrar : The BeanPostProcessor bean definition [com.alibaba.dubbo.config.spring.beans.factory.annotation.DubboConfigBindingBeanPostProcessor] for dubbo config bean [name : com.alibaba.dubbo.config.ApplicationConfig#0] has been registered. 
+2019-03-18 20:07:04.076 INFO  --- [main] c.a.d.c.s.c.a.DubboConfigBindingRegistrar : The dubbo config bean definition [name : com.alibaba.dubbo.config.RegistryConfig#0, class : com.alibaba.dubbo.config.RegistryConfig] has been registered. 
+2019-03-18 20:07:04.076 INFO  --- [main] c.a.d.c.s.c.a.DubboConfigBindingRegistrar : The BeanPostProcessor bean definition [com.alibaba.dubbo.config.spring.beans.factory.annotation.DubboConfigBindingBeanPostProcessor] for dubbo config bean [name : com.alibaba.dubbo.config.RegistryConfig#0] has been registered. 
+2019-03-18 20:07:04.077 INFO  --- [main] c.a.d.c.s.c.a.DubboConfigBindingRegistrar : The dubbo config bean definition [name : com.alibaba.dubbo.config.ProtocolConfig#0, class : com.alibaba.dubbo.config.ProtocolConfig] has been registered. 
+2019-03-18 20:07:04.077 INFO  --- [main] c.a.d.c.s.c.a.DubboConfigBindingRegistrar : The BeanPostProcessor bean definition [com.alibaba.dubbo.config.spring.beans.factory.annotation.DubboConfigBindingBeanPostProcessor] for dubbo config bean [name : com.alibaba.dubbo.config.ProtocolConfig#0] has been registered. 
+2019-03-18 20:07:04.396 INFO  --- [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker : Bean 'com.alibaba.boot.dubbo.autoconfigure.DubboAutoConfiguration' of type [com.alibaba.boot.dubbo.autoconfigure.DubboAutoConfiguration$$EnhancerBySpringCGLIB$$bed50d00] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying) 
+2019-03-18 20:07:04.470 INFO  --- [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker : Bean 'relaxedDubboConfigBinder' of type [com.alibaba.boot.dubbo.autoconfigure.RelaxedDubboConfigBinder] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying) 
+2019-03-18 20:07:04.479 INFO  --- [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$afd3678e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying) 
+2019-03-18 20:07:04.502 INFO  --- [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker : Bean 'relaxedDubboConfigBinder' of type [com.alibaba.boot.dubbo.autoconfigure.RelaxedDubboConfigBinder] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying) 
+2019-03-18 20:07:04.505 INFO  --- [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker : Bean 'relaxedDubboConfigBinder' of type [com.alibaba.boot.dubbo.autoconfigure.RelaxedDubboConfigBinder] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying) 
+2019-03-18 20:07:04.801 INFO  --- [main] o.s.b.w.e.tomcat.TomcatWebServer : Tomcat initialized with port(s): 8080 (http) 
+2019-03-18 20:07:04.819 INFO  --- [main] o.a.catalina.core.StandardService : Starting service [Tomcat] 
+2019-03-18 20:07:04.819 INFO  --- [main] o.a.catalina.core.StandardEngine : Starting Servlet engine: [Apache Tomcat/9.0.16] 
+2019-03-18 20:07:04.824 INFO  --- [main] o.a.c.core.AprLifecycleListener : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Java\jdk1.8.0_101\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;c:\gtk\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\MySQL\MySQL Server 8.0\bin;C:\Program Files\TortoiseSVN\bin;C:\Program Files\MySQL\MySQL Server 5.7\bin;D:\program files\apache-maven\bin;D:\gradle-4.8.1\bin;C:\Java\jdk-10.0.1\bin;%JRE_HOME%;D:\program files\Tomcat\apache-tomcat-7.0.90\apache-tomcat-7.0.90\bin;%ANDROID_SDK_HOME%\platform-tools;%ANDROID_SDK_HOME%\tools;C:\Users\csdc\AppData\Local\Microsoft\WindowsApps;D:\Program Files\Git\cmd;D:\program files\MongoDB\Server\3.2\bin;D:\program files\zookeeper-3.4.12\zookeeper-3.4.12\bin;C:\Users\csdc\AppData\Local\Microsoft\WindowsApps;;.] 
+2019-03-18 20:07:04.911 INFO  --- [main] o.a.c.c.C.[Tomcat].[localhost].[/] : Initializing Spring embedded WebApplicationContext 
+2019-03-18 20:07:04.911 INFO  --- [main] o.s.web.context.ContextLoader : Root WebApplicationContext: initialization completed in 1345 ms 
+2019-03-18 20:07:05.752 INFO  --- [main] o.s.s.c.ThreadPoolTaskExecutor : Initializing ExecutorService 'applicationTaskExecutor' 
+2019-03-18 20:07:05.879 INFO  --- [main] c.a.d.c.s.b.f.a.DubboConfigBindingBeanPostProcessor : The properties of bean [name : com.alibaba.dubbo.config.ApplicationConfig#0] have been binding by prefix of configuration properties : dubbo.application 
+2019-03-18 20:07:05.884 INFO  --- [main] c.a.d.c.s.b.f.a.DubboConfigBindingBeanPostProcessor : The properties of bean [name : com.alibaba.dubbo.config.RegistryConfig#0] have been binding by prefix of configuration properties : dubbo.registry 
+2019-03-18 20:07:05.890 INFO  --- [main] c.a.d.c.s.b.f.a.DubboConfigBindingBeanPostProcessor : The properties of bean [name : com.alibaba.dubbo.config.ProtocolConfig#0] have been binding by prefix of configuration properties : dubbo.protocol 
+2019-03-18 20:07:06.350 INFO  --- [main] o.s.s.c.ThreadPoolTaskScheduler : Initializing ExecutorService 'taskScheduler' 
+2019-03-18 20:07:06.489 INFO  --- [main] o.s.b.w.e.tomcat.TomcatWebServer : Tomcat initialized with port(s): 9999 (http) 
+2019-03-18 20:07:06.490 INFO  --- [main] o.a.catalina.core.StandardService : Starting service [Tomcat] 
+2019-03-18 20:07:06.491 INFO  --- [main] o.a.catalina.core.StandardEngine : Starting Servlet engine: [Apache Tomcat/9.0.16] 
+2019-03-18 20:07:06.512 INFO  --- [main] o.a.c.c.C.[Tomcat-1].[localhost].[/] : Initializing Spring embedded WebApplicationContext 
+2019-03-18 20:07:06.513 INFO  --- [main] o.s.web.context.ContextLoader : Root WebApplicationContext: initialization completed in 93 ms 
+2019-03-18 20:07:06.530 INFO  --- [main] o.s.b.a.e.web.EndpointLinksResolver : Exposing 2 endpoint(s) beneath base path '/actuator' 
+2019-03-18 20:07:06.584 ERROR --- [main] o.apache.catalina.util.LifecycleBase : Failed to start component [Connector[HTTP/1.1-9999]] 
+org.apache.catalina.LifecycleException: Protocol handler start failed
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1008)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardService.addConnector(StandardService.java:226)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.addPreviouslyRemovedConnectors(TomcatWebServer.java:259)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start(TomcatWebServer.java:197)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.startWebServer(ServletWebServerApplicationContext.java:311)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.finishRefresh(ServletWebServerApplicationContext.java:164)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:552)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:142)
+	at org.springframework.boot.actuate.autoconfigure.web.server.ManagementContextAutoConfiguration$DifferentManagementContextConfiguration.afterSingletonsInstantiated(ManagementContextAutoConfiguration.java:151)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:866)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:877)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:142)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at com.csdc.TlabelApplication.main(TlabelApplication.java:14)
+Caused by: java.net.BindException: Address already in use: bind
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:433)
+	at sun.nio.ch.Net.bind(Net.java:425)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at org.apache.tomcat.util.net.NioEndpoint.initServerSocket(NioEndpoint.java:236)
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:210)
+	at org.apache.tomcat.util.net.AbstractEndpoint.bindWithCleanup(AbstractEndpoint.java:1085)
+	at org.apache.tomcat.util.net.AbstractEndpoint.start(AbstractEndpoint.java:1171)
+	at org.apache.coyote.AbstractProtocol.start(AbstractProtocol.java:568)
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1005)
+	... 19 common frames omitted
+2019-03-18 20:07:06.588 INFO  --- [main] o.a.catalina.core.StandardService : Stopping service [Tomcat] 
+2019-03-18 20:07:06.600 INFO  --- [main] o.a.catalina.core.StandardService : Stopping service [Tomcat] 
+2019-03-18 20:07:06.612 INFO  --- [main] o.s.b.a.l.ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled. 
+2019-03-18 20:07:06.616 ERROR --- [main] o.s.b.d.LoggingFailureAnalysisReporter : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The Tomcat connector configured to listen on port 9999 failed to start. The port may already be in use or the connector may be misconfigured.
+
+Action:
+
+Verify the connector's configuration, identify and stop any process that's listening on port 9999, or configure this application to listen on another port.
+ 
+2019-03-18 20:07:06.617 INFO  --- [main] o.s.s.c.ThreadPoolTaskScheduler : Shutting down ExecutorService 'taskScheduler' 
+2019-03-18 20:07:06.618 INFO  --- [main] o.s.s.c.ThreadPoolTaskExecutor : Shutting down ExecutorService 'applicationTaskExecutor' 
+2019-03-18 20:07:06.620 INFO  --- [main] c.a.d.c.s.b.f.a.ReferenceAnnotationBeanPostProcessor : class com.alibaba.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor was destroying! 
+2019-03-18 20:07:06.624 INFO  --- [DubboShutdownHook] c.a.dubbo.config.AbstractConfig :  [DUBBO] Run shutdown hook now., dubbo version: 2.6.2, current host: 192.168.88.11 
+2019-03-18 20:07:06.625 INFO  --- [DubboShutdownHook] c.a.d.r.s.AbstractRegistryFactory :  [DUBBO] Close all registries [], dubbo version: 2.6.2, current host: 192.168.88.11 
+2019-03-18 20:07:25.770 INFO  --- [main] c.a.d.common.logger.LoggerFactory : using logger: com.alibaba.dubbo.common.logger.slf4j.Slf4jLoggerAdapter 
+2019-03-18 20:07:25.773 INFO  --- [main] c.a.b.d.c.e.WelcomeLogoApplicationListener : 
+
+ :: Dubbo Spring Boot (v0.2.0) : https://github.com/apache/incubator-dubbo-spring-boot-project
+ :: Dubbo (v2.6.2) : https://github.com/apache/incubator-dubbo
+ :: Google group : dev@dubbo.incubator.apache.org
+ 
+2019-03-18 20:07:25.775 INFO  --- [main] c.a.b.d.c.e.OverrideDubboConfigApplicationListener : Dubbo Config was overridden by externalized configuration {dubbo.application.name=tpva, dubbo.protocol.name=dubbo, dubbo.protocol.port=12345, dubbo.protocol.threads=10, dubbo.registry.address=192.168.88.97:30000, dubbo.registry.protocol=zookeeper, dubbo.registry.timeout=30000} 
+2019-03-18 20:07:25.864 INFO  --- [main] com.csdc.TlabelApplication : Starting TlabelApplication on csdc-PC with PID 14372 (E:\projects\tlabel\tlabel_service\target\classes started by csdc in E:\projects\tlabel) 
+2019-03-18 20:07:25.866 INFO  --- [main] com.csdc.TlabelApplication : No active profile set, falling back to default profiles: default 
+2019-03-18 20:07:26.467 INFO  --- [main] c.a.d.c.s.c.a.DubboConfigBindingRegistrar : The dubbo config bean definition [name : com.alibaba.dubbo.config.ApplicationConfig#0, class : com.alibaba.dubbo.config.ApplicationConfig] has been registered. 
+2019-03-18 20:07:26.468 INFO  --- [main] c.a.d.c.s.c.a.DubboConfigBindingRegistrar : The BeanPostProcessor bean definition [com.alibaba.dubbo.config.spring.beans.factory.annotation.DubboConfigBindingBeanPostProcessor] for dubbo config bean [name : com.alibaba.dubbo.config.ApplicationConfig#0] has been registered. 
+2019-03-18 20:07:26.468 INFO  --- [main] c.a.d.c.s.c.a.DubboConfigBindingRegistrar : The dubbo config bean definition [name : com.alibaba.dubbo.config.RegistryConfig#0, class : com.alibaba.dubbo.config.RegistryConfig] has been registered. 
+2019-03-18 20:07:26.468 INFO  --- [main] c.a.d.c.s.c.a.DubboConfigBindingRegistrar : The BeanPostProcessor bean definition [com.alibaba.dubbo.config.spring.beans.factory.annotation.DubboConfigBindingBeanPostProcessor] for dubbo config bean [name : com.alibaba.dubbo.config.RegistryConfig#0] has been registered. 
+2019-03-18 20:07:26.469 INFO  --- [main] c.a.d.c.s.c.a.DubboConfigBindingRegistrar : The dubbo config bean definition [name : com.alibaba.dubbo.config.ProtocolConfig#0, class : com.alibaba.dubbo.config.ProtocolConfig] has been registered. 
+2019-03-18 20:07:26.469 INFO  --- [main] c.a.d.c.s.c.a.DubboConfigBindingRegistrar : The BeanPostProcessor bean definition [com.alibaba.dubbo.config.spring.beans.factory.annotation.DubboConfigBindingBeanPostProcessor] for dubbo config bean [name : com.alibaba.dubbo.config.ProtocolConfig#0] has been registered. 
+2019-03-18 20:07:26.766 INFO  --- [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker : Bean 'com.alibaba.boot.dubbo.autoconfigure.DubboAutoConfiguration' of type [com.alibaba.boot.dubbo.autoconfigure.DubboAutoConfiguration$$EnhancerBySpringCGLIB$$c9b32cd6] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying) 
+2019-03-18 20:07:26.840 INFO  --- [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker : Bean 'relaxedDubboConfigBinder' of type [com.alibaba.boot.dubbo.autoconfigure.RelaxedDubboConfigBinder] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying) 
+2019-03-18 20:07:26.852 INFO  --- [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$bab18764] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying) 
+2019-03-18 20:07:26.875 INFO  --- [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker : Bean 'relaxedDubboConfigBinder' of type [com.alibaba.boot.dubbo.autoconfigure.RelaxedDubboConfigBinder] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying) 
+2019-03-18 20:07:26.877 INFO  --- [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker : Bean 'relaxedDubboConfigBinder' of type [com.alibaba.boot.dubbo.autoconfigure.RelaxedDubboConfigBinder] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying) 
+2019-03-18 20:07:27.153 INFO  --- [main] o.s.b.w.e.tomcat.TomcatWebServer : Tomcat initialized with port(s): 8080 (http) 
+2019-03-18 20:07:27.170 INFO  --- [main] o.a.catalina.core.StandardService : Starting service [Tomcat] 
+2019-03-18 20:07:27.171 INFO  --- [main] o.a.catalina.core.StandardEngine : Starting Servlet engine: [Apache Tomcat/9.0.16] 
+2019-03-18 20:07:27.176 INFO  --- [main] o.a.c.core.AprLifecycleListener : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Java\jdk1.8.0_101\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;c:\gtk\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\MySQL\MySQL Server 8.0\bin;C:\Program Files\TortoiseSVN\bin;C:\Program Files\MySQL\MySQL Server 5.7\bin;D:\program files\apache-maven\bin;D:\gradle-4.8.1\bin;C:\Java\jdk-10.0.1\bin;%JRE_HOME%;D:\program files\Tomcat\apache-tomcat-7.0.90\apache-tomcat-7.0.90\bin;%ANDROID_SDK_HOME%\platform-tools;%ANDROID_SDK_HOME%\tools;C:\Users\csdc\AppData\Local\Microsoft\WindowsApps;D:\Program Files\Git\cmd;D:\program files\MongoDB\Server\3.2\bin;D:\program files\zookeeper-3.4.12\zookeeper-3.4.12\bin;C:\Users\csdc\AppData\Local\Microsoft\WindowsApps;;.] 
+2019-03-18 20:07:27.266 INFO  --- [main] o.a.c.c.C.[Tomcat].[localhost].[/] : Initializing Spring embedded WebApplicationContext 
+2019-03-18 20:07:27.267 INFO  --- [main] o.s.web.context.ContextLoader : Root WebApplicationContext: initialization completed in 1343 ms 
+2019-03-18 20:07:28.066 INFO  --- [main] o.s.s.c.ThreadPoolTaskExecutor : Initializing ExecutorService 'applicationTaskExecutor' 
+2019-03-18 20:07:28.191 INFO  --- [main] c.a.d.c.s.b.f.a.DubboConfigBindingBeanPostProcessor : The properties of bean [name : com.alibaba.dubbo.config.ApplicationConfig#0] have been binding by prefix of configuration properties : dubbo.application 
+2019-03-18 20:07:28.195 INFO  --- [main] c.a.d.c.s.b.f.a.DubboConfigBindingBeanPostProcessor : The properties of bean [name : com.alibaba.dubbo.config.RegistryConfig#0] have been binding by prefix of configuration properties : dubbo.registry 
+2019-03-18 20:07:28.201 INFO  --- [main] c.a.d.c.s.b.f.a.DubboConfigBindingBeanPostProcessor : The properties of bean [name : com.alibaba.dubbo.config.ProtocolConfig#0] have been binding by prefix of configuration properties : dubbo.protocol 
+2019-03-18 20:07:28.646 INFO  --- [main] o.s.s.c.ThreadPoolTaskScheduler : Initializing ExecutorService 'taskScheduler' 
+2019-03-18 20:07:28.796 INFO  --- [main] o.s.b.w.e.tomcat.TomcatWebServer : Tomcat initialized with port(s): 9999 (http) 
+2019-03-18 20:07:28.797 INFO  --- [main] o.a.catalina.core.StandardService : Starting service [Tomcat] 
+2019-03-18 20:07:28.797 INFO  --- [main] o.a.catalina.core.StandardEngine : Starting Servlet engine: [Apache Tomcat/9.0.16] 
+2019-03-18 20:07:28.818 INFO  --- [main] o.a.c.c.C.[Tomcat-1].[localhost].[/] : Initializing Spring embedded WebApplicationContext 
+2019-03-18 20:07:28.819 INFO  --- [main] o.s.web.context.ContextLoader : Root WebApplicationContext: initialization completed in 102 ms 
+2019-03-18 20:07:28.836 INFO  --- [main] o.s.b.a.e.web.EndpointLinksResolver : Exposing 2 endpoint(s) beneath base path '/actuator' 
+2019-03-18 20:07:28.902 INFO  --- [main] o.s.b.w.e.tomcat.TomcatWebServer : Tomcat started on port(s): 9999 (http) with context path '' 
+2019-03-18 20:07:28.918 INFO  --- [main] o.s.b.w.e.tomcat.TomcatWebServer : Tomcat started on port(s): 8080 (http) with context path '' 
+2019-03-18 20:07:28.919 INFO  --- [main] com.csdc.TlabelApplication : Started TlabelApplication in 3.494 seconds (JVM running for 4.133) 
+2019-03-18 20:07:28.928 ERROR --- [main] com.csdc.runner.LabelRunner : 模型不存在 
+2019-03-18 20:07:29.785 INFO  --- [RMI TCP Connection(8)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/] : Initializing Spring DispatcherServlet 'dispatcherServlet' 
+2019-03-18 20:07:29.786 INFO  --- [RMI TCP Connection(8)-127.0.0.1] o.s.web.servlet.DispatcherServlet : Initializing Servlet 'dispatcherServlet' 
+2019-03-18 20:07:29.815 INFO  --- [RMI TCP Connection(8)-127.0.0.1] o.s.web.servlet.DispatcherServlet : Completed initialization in 29 ms 
+2019-03-18 20:07:30.121 INFO  --- [RMI TCP Connection(7)-127.0.0.1] c.alibaba.druid.pool.DruidDataSource : {dataSource-1} inited 
+2019-03-18 20:08:22.796 INFO  --- [main] c.a.d.common.logger.LoggerFactory : using logger: com.alibaba.dubbo.common.logger.slf4j.Slf4jLoggerAdapter 
+2019-03-18 20:08:22.800 INFO  --- [main] c.a.b.d.c.e.WelcomeLogoApplicationListener : 
+
+ :: Dubbo Spring Boot (v0.2.0) : https://github.com/apache/incubator-dubbo-spring-boot-project
+ :: Dubbo (v2.6.2) : https://github.com/apache/incubator-dubbo
+ :: Google group : dev@dubbo.incubator.apache.org
+ 
+2019-03-18 20:08:22.803 INFO  --- [main] c.a.b.d.c.e.OverrideDubboConfigApplicationListener : Dubbo Config was overridden by externalized configuration {dubbo.application.name=tpva, dubbo.protocol.name=dubbo, dubbo.protocol.port=12345, dubbo.protocol.threads=10, dubbo.registry.address=192.168.88.97:30000, dubbo.registry.protocol=zookeeper, dubbo.registry.timeout=30000} 
+2019-03-18 20:08:22.895 INFO  --- [main] com.csdc.TlabelApplication : Starting TlabelApplication on csdc-PC with PID 12260 (E:\projects\tlabel\tlabel_service\target\classes started by csdc in E:\projects\tlabel) 
+2019-03-18 20:08:22.898 INFO  --- [main] com.csdc.TlabelApplication : No active profile set, falling back to default profiles: default 
+2019-03-18 20:08:23.614 INFO  --- [main] c.a.d.c.s.c.a.DubboConfigBindingRegistrar : The dubbo config bean definition [name : com.alibaba.dubbo.config.ApplicationConfig#0, class : com.alibaba.dubbo.config.ApplicationConfig] has been registered. 
+2019-03-18 20:08:23.616 INFO  --- [main] c.a.d.c.s.c.a.DubboConfigBindingRegistrar : The BeanPostProcessor bean definition [com.alibaba.dubbo.config.spring.beans.factory.annotation.DubboConfigBindingBeanPostProcessor] for dubbo config bean [name : com.alibaba.dubbo.config.ApplicationConfig#0] has been registered. 
+2019-03-18 20:08:23.617 INFO  --- [main] c.a.d.c.s.c.a.DubboConfigBindingRegistrar : The dubbo config bean definition [name : com.alibaba.dubbo.config.RegistryConfig#0, class : com.alibaba.dubbo.config.RegistryConfig] has been registered. 
+2019-03-18 20:08:23.619 INFO  --- [main] c.a.d.c.s.c.a.DubboConfigBindingRegistrar : The BeanPostProcessor bean definition [com.alibaba.dubbo.config.spring.beans.factory.annotation.DubboConfigBindingBeanPostProcessor] for dubbo config bean [name : com.alibaba.dubbo.config.RegistryConfig#0] has been registered. 
+2019-03-18 20:08:23.619 INFO  --- [main] c.a.d.c.s.c.a.DubboConfigBindingRegistrar : The dubbo config bean definition [name : com.alibaba.dubbo.config.ProtocolConfig#0, class : com.alibaba.dubbo.config.ProtocolConfig] has been registered. 
+2019-03-18 20:08:23.619 INFO  --- [main] c.a.d.c.s.c.a.DubboConfigBindingRegistrar : The BeanPostProcessor bean definition [com.alibaba.dubbo.config.spring.beans.factory.annotation.DubboConfigBindingBeanPostProcessor] for dubbo config bean [name : com.alibaba.dubbo.config.ProtocolConfig#0] has been registered. 
+2019-03-18 20:08:23.917 INFO  --- [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker : Bean 'com.alibaba.boot.dubbo.autoconfigure.DubboAutoConfiguration' of type [com.alibaba.boot.dubbo.autoconfigure.DubboAutoConfiguration$$EnhancerBySpringCGLIB$$6f39e22d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying) 
+2019-03-18 20:08:23.993 INFO  --- [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker : Bean 'relaxedDubboConfigBinder' of type [com.alibaba.boot.dubbo.autoconfigure.RelaxedDubboConfigBinder] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying) 
+2019-03-18 20:08:24.000 INFO  --- [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$60383cbb] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying) 
+2019-03-18 20:08:24.022 INFO  --- [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker : Bean 'relaxedDubboConfigBinder' of type [com.alibaba.boot.dubbo.autoconfigure.RelaxedDubboConfigBinder] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying) 
+2019-03-18 20:08:24.024 INFO  --- [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker : Bean 'relaxedDubboConfigBinder' of type [com.alibaba.boot.dubbo.autoconfigure.RelaxedDubboConfigBinder] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying) 
+2019-03-18 20:08:24.311 INFO  --- [main] o.s.b.w.e.tomcat.TomcatWebServer : Tomcat initialized with port(s): 8080 (http) 
+2019-03-18 20:08:24.329 INFO  --- [main] o.a.catalina.core.StandardService : Starting service [Tomcat] 
+2019-03-18 20:08:24.330 INFO  --- [main] o.a.catalina.core.StandardEngine : Starting Servlet engine: [Apache Tomcat/9.0.16] 
+2019-03-18 20:08:24.335 INFO  --- [main] o.a.c.core.AprLifecycleListener : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Java\jdk1.8.0_101\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;c:\gtk\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\MySQL\MySQL Server 8.0\bin;C:\Program Files\TortoiseSVN\bin;C:\Program Files\MySQL\MySQL Server 5.7\bin;D:\program files\apache-maven\bin;D:\gradle-4.8.1\bin;C:\Java\jdk-10.0.1\bin;%JRE_HOME%;D:\program files\Tomcat\apache-tomcat-7.0.90\apache-tomcat-7.0.90\bin;%ANDROID_SDK_HOME%\platform-tools;%ANDROID_SDK_HOME%\tools;C:\Users\csdc\AppData\Local\Microsoft\WindowsApps;D:\Program Files\Git\cmd;D:\program files\MongoDB\Server\3.2\bin;D:\program files\zookeeper-3.4.12\zookeeper-3.4.12\bin;C:\Users\csdc\AppData\Local\Microsoft\WindowsApps;;.] 
+2019-03-18 20:08:24.425 INFO  --- [main] o.a.c.c.C.[Tomcat].[localhost].[/] : Initializing Spring embedded WebApplicationContext 
+2019-03-18 20:08:24.426 INFO  --- [main] o.s.web.context.ContextLoader : Root WebApplicationContext: initialization completed in 1438 ms 
+2019-03-18 20:08:25.235 INFO  --- [main] o.s.s.c.ThreadPoolTaskExecutor : Initializing ExecutorService 'applicationTaskExecutor' 
+2019-03-18 20:08:25.361 INFO  --- [main] c.a.d.c.s.b.f.a.DubboConfigBindingBeanPostProcessor : The properties of bean [name : com.alibaba.dubbo.config.ApplicationConfig#0] have been binding by prefix of configuration properties : dubbo.application 
+2019-03-18 20:08:25.365 INFO  --- [main] c.a.d.c.s.b.f.a.DubboConfigBindingBeanPostProcessor : The properties of bean [name : com.alibaba.dubbo.config.RegistryConfig#0] have been binding by prefix of configuration properties : dubbo.registry 
+2019-03-18 20:08:25.371 INFO  --- [main] c.a.d.c.s.b.f.a.DubboConfigBindingBeanPostProcessor : The properties of bean [name : com.alibaba.dubbo.config.ProtocolConfig#0] have been binding by prefix of configuration properties : dubbo.protocol 
+2019-03-18 20:08:25.831 INFO  --- [main] o.s.s.c.ThreadPoolTaskScheduler : Initializing ExecutorService 'taskScheduler' 
+2019-03-18 20:08:25.967 INFO  --- [main] o.s.b.w.e.tomcat.TomcatWebServer : Tomcat initialized with port(s): 9999 (http) 
+2019-03-18 20:08:25.969 INFO  --- [main] o.a.catalina.core.StandardService : Starting service [Tomcat] 
+2019-03-18 20:08:25.969 INFO  --- [main] o.a.catalina.core.StandardEngine : Starting Servlet engine: [Apache Tomcat/9.0.16] 
+2019-03-18 20:08:25.990 INFO  --- [main] o.a.c.c.C.[Tomcat-1].[localhost].[/] : Initializing Spring embedded WebApplicationContext 
+2019-03-18 20:08:25.990 INFO  --- [main] o.s.web.context.ContextLoader : Root WebApplicationContext: initialization completed in 92 ms 
+2019-03-18 20:08:26.007 INFO  --- [main] o.s.b.a.e.web.EndpointLinksResolver : Exposing 2 endpoint(s) beneath base path '/actuator' 
+2019-03-18 20:08:26.068 INFO  --- [main] o.s.b.w.e.tomcat.TomcatWebServer : Tomcat started on port(s): 9999 (http) with context path '' 
+2019-03-18 20:08:26.086 INFO  --- [main] o.s.b.w.e.tomcat.TomcatWebServer : Tomcat started on port(s): 8080 (http) with context path '' 
+2019-03-18 20:08:26.087 INFO  --- [main] com.csdc.TlabelApplication : Started TlabelApplication in 3.669 seconds (JVM running for 4.299) 
+2019-03-18 20:08:27.283 INFO  --- [RMI TCP Connection(4)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/] : Initializing Spring DispatcherServlet 'dispatcherServlet' 
+2019-03-18 20:08:27.284 INFO  --- [RMI TCP Connection(4)-127.0.0.1] o.s.web.servlet.DispatcherServlet : Initializing Servlet 'dispatcherServlet' 
+2019-03-18 20:08:27.304 INFO  --- [RMI TCP Connection(4)-127.0.0.1] o.s.web.servlet.DispatcherServlet : Completed initialization in 19 ms 
+2019-03-18 20:08:27.648 INFO  --- [RMI TCP Connection(10)-127.0.0.1] c.alibaba.druid.pool.DruidDataSource : {dataSource-1} inited 
