@@ -9,9 +9,12 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
 
+
     <modules>
-        <module></module>
         <module>tlabel_api</module>
+        <module>tlabel_service</module>
     </modules>
+
+
 
 </project>

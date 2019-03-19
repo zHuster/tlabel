@@ -10,18 +10,14 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>tlabel_api</artifactId>
+
     <dependencies>
-        <!--lda依赖-->
         <dependency>
-            <groupId>info.csdc</groupId>
+            <groupId>csdc.info</groupId>
             <artifactId>lda_common</artifactId>
-            <version>0.0.1</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.projectlombok</groupId>
-                    <artifactId>lombok</artifactId>
-                </exclusion>
-            </exclusions>
+            <version>0.0.1-SNAPSHOT</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/lda_common-0.0.1-SNAPSHOT.jar</systemPath>
         </dependency>
     </dependencies>
 

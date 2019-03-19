@@ -1,7 +1,7 @@
 package com.csdc.runner;
 
-import csdc.info.lda_common.model.enums.DisciplineType;
 import csdc.label.model.NormalizeTopicSummary;
+import csdc.topic.enums.DisciplineType;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
