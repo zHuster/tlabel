@@ -20,4 +20,13 @@ public interface TopicService {
      * @return
      */
     Map<Integer, List<String>> getTopicsByDiscipline(DisciplineType disciplineType);
+
+    /**
+     * 根据主题相似度获取与所选主题相关的10个主题
+     *
+     * @param topicId
+     * @param disciplineType
+     * @return
+     */
+    Map<Integer, List<String>> getSimilarTopics(Integer topicId, DisciplineType disciplineType);
 }
