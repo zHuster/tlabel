@@ -6,5 +6,6 @@ package com.csdc.exception;
  *
  */
 public enum RequestError {
-    NO_SUCH_TOPIC
+    NO_SUCH_TOPIC,
+    NO_SUCH_DISCIPLINE
 }

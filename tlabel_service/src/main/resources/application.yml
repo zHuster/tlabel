@@ -1,10 +1,12 @@
+
+
 spring:
-  datasource:
-    username: zhangzhi
-    password: zz951130
-    url: jdbc:mysql:///miya
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    type: com.alibaba.druid.pool.DruidDataSource
+#  datasource:
+#    username: zhangzhi
+#    password: zz951130
+#    url: jdbc:mysql:///miya
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    type: com.alibaba.druid.pool.DruidDataSource
 
 #   数据源其他配置
     initialSize: 5
@@ -20,7 +22,7 @@ spring:
     poolPreparedStatements: true
 
 #   配置监控统计拦截的filters，去掉后监控界面sql无法统计，'wall'用于防火墙
-    filters: stat,wall
+    filters:
     maxPoolPreparedStatementPerConnectionSize: 20
     useGlobalDataSourceStat: true
     connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
@@ -32,7 +34,7 @@ mybatis:
 # actuator的监控配置
 management:
   server:
-    port: 9999
+    port: 10000
   endpoint:
     shutdown:
       enabled: false
@@ -40,7 +42,7 @@ management:
 #dubbo配置
 dubbo:
   application:
-    name: tpva
+    name: tlabel
   protocol:
     name: dubbo
     port: 12345
@@ -49,3 +51,8 @@ dubbo:
     protocol: zookeeper
     address: 192.168.88.97:30000
     timeout: 30000
+  scan:
+    basePackages: com.csdc.service.dubbo
+
+server:
+  port: 8886

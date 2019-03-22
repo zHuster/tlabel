@@ -36,8 +36,8 @@ public class LabelRunner implements ApplicationRunner {
             topicSummary = (NormalizeTopicSummary) ois.readObject();
             data.put(DisciplineType.新闻学与传播学, topicSummary);
         } catch (IOException e) {
+            log.error("无法读取模型");
             e.printStackTrace();
-            log.error("模型不存在");
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         } finally {

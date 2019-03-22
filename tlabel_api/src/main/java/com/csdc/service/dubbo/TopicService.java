@@ -28,5 +28,5 @@ public interface TopicService {
      * @param disciplineType
      * @return
      */
-    Map<Integer, List<String>> getSimilarTopics(Integer topicId, DisciplineType disciplineType);
+    Map<Integer, Map<Double,List<String>>> getSimilarTopics(Integer topicId, DisciplineType disciplineType);
 }
