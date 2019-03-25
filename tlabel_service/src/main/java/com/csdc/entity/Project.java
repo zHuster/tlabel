@@ -15,9 +15,10 @@ import lombok.NoArgsConstructor;
 public class Project {
     private String id;
     private String name;
+    private Integer year;
 
     public static JProject makeNewJProject(Project project){
-        return new JProject(project.getId(),project.getName());
+        return new JProject(project.getId(),project.getName(),project.getYear());
     }
 
 }

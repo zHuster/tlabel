@@ -4,11 +4,12 @@
     <resultMap id="projectResultMap" type="com.csdc.entity.Project">
         <id property="id" column="C_ID"/>
         <result property="name" column="C_NAME"/>
+        <result property="year" column="C_YEAR"/>
     </resultMap>
 
 
     <select id="findProjectByIds" resultMap="projectResultMap">
-        select C_ID,C_NAME from T_PROJECT_APPLICATION
+        select C_ID,C_NAME,C_YEAR from T_PROJECT_APPLICATION
         <where>
             C_ID in
           <foreach collection="ids" item="id" separator="," open="(" close=")">

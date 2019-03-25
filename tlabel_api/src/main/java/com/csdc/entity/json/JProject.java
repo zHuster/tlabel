@@ -14,10 +14,6 @@ import lombok.NoArgsConstructor;
 public class JProject {
     private String id;
     private String name;
- //   private Integer year;
+    private Integer year;
 
-  /*  public JProject(String id,String name){
-        this.id=id;
-        this.name=name;
-    }*/
 }
