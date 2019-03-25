@@ -1,6 +1,7 @@
 package com.csdc.bootm;
 
 import com.alibaba.dubbo.config.annotation.Reference;
+import com.csdc.mapper.ProjectMapper;
 import csdc.info.lda_common.service.TopicService;
 import csdc.label.model.NormalizeTopicSummary;
 import org.junit.Test;
@@ -22,15 +23,14 @@ public class tlabelTests {
     DataSource dataSource;
     @Reference
     TopicService topicService;
-    @Resource
-    NormalizeTopicSummary normalizeTopicSummary;
 
+    @Autowired
+    ProjectMapper projectMapper;
 
 
     @Test
     public void contextLoads() throws SQLException {
-        Map<Integer, List<String>> map=normalizeTopicSummary.getTopicTop();
-        System.out.println(map);
+     //System.out.println(projectMapper.findProjectById("4028d89a49402ac70149402f7ca837fb"));
     }
     /**
      * 在一个字符串(0<=字符串长度<=10000，全部由字母组成)中找到第一个只出现一次的字符,

@@ -19,7 +19,7 @@ public interface TopicService {
      * @param disciplineType
      * @return
      */
-    Map<Integer, List<String>> getTopicsByDiscipline(DisciplineType disciplineType);
+    Map<Integer, Map<Double,List<String>>> getTopicsByDiscipline(DisciplineType disciplineType);
 
     /**
      * 根据主题相似度获取与所选主题相关的10个主题

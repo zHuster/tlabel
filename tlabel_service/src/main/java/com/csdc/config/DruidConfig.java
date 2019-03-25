@@ -20,7 +20,7 @@ import java.util.Map;
  *
  * 配置druid的后台监控
  */
-//@Configuration
+@Configuration
 public class DruidConfig {
 
     @ConfigurationProperties(prefix = "spring.datasource")

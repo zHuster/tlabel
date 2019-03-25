@@ -4,6 +4,7 @@ import com.alibaba.dubbo.config.annotation.Service;
 import com.csdc.exception.RequestError;
 import com.csdc.exception.RequestException;
 import com.csdc.runner.LabelRunner;
+import com.csdc.service.CalculateService;
 import com.csdc.util.Similarity;
 import csdc.info.lda_common.model.enums.DisciplineType;
 import csdc.label.model.NormalizeTopicSummary;
@@ -21,15 +22,25 @@ import java.util.stream.Collectors;
  * <p>
  * 服务端主题标签接口的实现者
  */
-@Service
+@Service(version = "1.0.1")
 @org.springframework.stereotype.Service
 @RestController
 public class TopicServiceImpl implements TopicService {
 
     @Override
     @Nullable
-    public Map<Integer, List<String>> getTopicsByDiscipline(DisciplineType disciplineType) {
-        return LabelRunner.data.get(disciplineType).getSummary();
+    @GetMapping("hh")
+    public Map<Integer, Map<Double,List<String>>> getTopicsByDiscipline(DisciplineType disciplineType) {
+        Map<Integer, Map<Double,List<String>>> result=new HashMap<>();
+        double[][] theta=LabelRunner.data.get(DisciplineType.新闻学与传播学).getTheta();
+        Map<Integer,Double> possibilities=CalculateService.getPossibilities(theta);
+        Map<Integer, List<String>> temp = LabelRunner.data.get(DisciplineType.新闻学与传播学).getSummary();
+        temp.keySet().stream().forEach(e->{
+            Map<Double,List<String>> subMap=new HashMap<>();
+            subMap.put(possibilities.get(e),temp.get(e));
+            result.put(e,subMap);
+        });
+        return result;
     }
 
     @GetMapping("res/{topicId}")

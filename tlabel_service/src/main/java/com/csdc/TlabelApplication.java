@@ -6,8 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
-//@MapperScan("com.csdc.mapper")
-@SpringBootApplication(exclude = DataSourceAutoConfiguration.class)
+@MapperScan("com.csdc.mapper")
+@SpringBootApplication
 @EnableScheduling  //开启定时器
 public class TlabelApplication {
 

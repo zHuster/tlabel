@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.csdc.mapper.ProjectMapper">
+    <resultMap id="projectResultMap" type="com.csdc.entity.Project">
+        <id property="id" column="C_ID"/>
+        <result property="name" column="C_NAME"/>
+    </resultMap>
+
+
+    <select id="findProjectByIds" resultMap="projectResultMap">
+        select C_ID,C_NAME from T_PROJECT_APPLICATION
+        <where>
+            C_ID in
+          <foreach collection="ids" item="id" separator="," open="(" close=")">
+              #{id}
+          </foreach>
+        </where>
+    </select>
+
+
+
+</mapper>

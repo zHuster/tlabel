@@ -108,7 +108,15 @@
     <orderEntry type="library" name="Maven: org.springframework:spring-context:5.1.5.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.javassist:javassist:3.20.0-GA" level="project" />
     <orderEntry type="library" name="Maven: org.jboss.netty:netty:3.2.5.Final" level="project" />
-    <orderEntry type="library" name="Maven: com.csdc:label:1.0-SNAPSHOT" level="project" />
+    <orderEntry type="module-library">
+      <library name="Maven: com.csdc:label:1.0-SNAPSHOT">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/label-1.0-SNAPSHOT.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
     <orderEntry type="module-library">
       <library name="Maven: csdc.nlp:lda:1.0-SNAPSHOT">
         <CLASSES>
@@ -119,7 +127,8 @@
       </library>
     </orderEntry>
     <orderEntry type="library" name="Maven: org.springframework.security:spring-security-crypto:5.1.2.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: info.csdc:tlabel_api:1.7:1.0.0" level="project" />
+    <orderEntry type="module" module-name="tlabel_api" />
     <orderEntry type="library" name="Maven: info.csdc:lda_common:0.0.1" level="project" />
+    <orderEntry type="library" name="Maven: com.oracle:ojdbc6:11.2.0.3" level="project" />
   </component>
 </module>

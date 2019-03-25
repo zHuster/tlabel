@@ -19,13 +19,6 @@
         <java.version>1.8</java.version>
     </properties>
 
-    <repositories>
-        <repository>
-            <id>csdc</id>
-            <name>csdc</name>
-            <url>http://192.168.88.200:8081/repository/csdc/</url>
-        </repository>
-    </repositories>
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -114,7 +107,10 @@
                     <artifactId>slf4j-api</artifactId>
                 </exclusion>
             </exclusions>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/label-1.0-SNAPSHOT.jar</systemPath>
         </dependency>
+
 
         <dependency>
             <groupId>csdc.nlp</groupId>
@@ -149,21 +145,72 @@
             <!--<artifactId>tlabel_api</artifactId>-->
             <!--<version>1.0-SNAPSHOT</version>-->
         <!--</dependency>-->
+
         <dependency>
-            <groupId>info.csdc</groupId>
+            <groupId>com.csdc</groupId>
             <artifactId>tlabel_api</artifactId>
-            <version>1.0.0</version>
-            <classifier>1.7</classifier>
+            <version>1.0-SNAPSHOT</version>
         </dependency>
-        
+
         <dependency>
             <groupId>info.csdc</groupId>
             <artifactId>lda_common</artifactId>
             <version>0.0.1</version>
         </dependency>
-
+        <dependency>
+            <groupId>com.oracle</groupId>
+            <artifactId>ojdbc6</artifactId>
+            <version>11.2.0.3</version>
+        </dependency>
 
     </dependencies>
+
+
+    <repositories>
+        <!--Central Repo-->
+        <repository>
+            <id>central</id>
+            <name>Maven Central</name>
+            <url>https://maven.aliyun.com/repository/central</url>
+            <!--<url>https://repo.maven.apache.org/maven2/</url>-->
+        </repository>
+        <!--Spring Repository-->
+        <repository>
+            <id>spring</id>
+            <name>Spring Repo</name>
+            <url>https://maven.aliyun.com/repository/spring</url>
+            <!--<url>http://repo.spring.io/release</url>-->
+        </repository>
+        <!--Spring Plugins Repository-->
+        <repository>
+            <id>spring-plugin</id>
+            <name>Spring Plugin Repo</name>
+            <url>https://maven.aliyun.com/repository/spring-plugin</url>
+            <!--<url>http://repo.spring.io/plugins-release</url>-->
+        </repository>
+        <!--CSDC Repo-->
+        <repository>
+            <id>csdc</id>
+            <name>csdc</name>
+            <url>http://192.168.88.200:8081/repository/csdc/</url>
+        </repository>
+        <!--CSDC Snapshots Repo-->
+        <repository>
+            <id>csdc-snapshots</id>
+            <name>csdc-snapshots</name>
+            <url>http://192.168.88.200:8081/repository/csdc-snapshots/</url>
+        </repository>
+    </repositories>
+
+    <pluginRepositories>
+        <!--Central Repo-->
+        <pluginRepository>
+            <id>central</id>
+            <name>Maven Central</name>
+            <url>https://maven.aliyun.com/repository/central</url>
+            <!--<url>https://repo.maven.apache.org/maven2/</url>-->
+        </pluginRepository>
+    </pluginRepositories>
 
     <build>
         <plugins>

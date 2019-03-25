@@ -1,12 +1,11 @@
 
-
 spring:
-#  datasource:
-#    username: zhangzhi
-#    password: zz951130
-#    url: jdbc:mysql:///miya
-#    driver-class-name: com.mysql.cj.jdbc.Driver
-#    type: com.alibaba.druid.pool.DruidDataSource
+  datasource:
+    username: smdbtest
+    password: p1013smdbtest702
+    url: jdbc:oracle:thin:@192.168.88.220:1521:orcl
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+    type: com.alibaba.druid.pool.DruidDataSource
 
 #   数据源其他配置
     initialSize: 5
@@ -22,7 +21,7 @@ spring:
     poolPreparedStatements: true
 
 #   配置监控统计拦截的filters，去掉后监控界面sql无法统计，'wall'用于防火墙
-    filters:
+    filters: wall
     maxPoolPreparedStatementPerConnectionSize: 20
     useGlobalDataSourceStat: true
     connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500

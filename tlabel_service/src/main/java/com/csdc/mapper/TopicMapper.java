@@ -1,6 +1,6 @@
 package com.csdc.mapper;
 
-import com.csdc.entity.Topic;
+import com.csdc.entity.Project;
 import org.springframework.stereotype.Repository;
 import java.util.*;
 
@@ -10,5 +10,5 @@ import java.util.*;
  */
 @Repository
 public interface TopicMapper {
-    void insertTopics(List<Topic> topics);
+    void insertTopics(List<Project> topics);
 }

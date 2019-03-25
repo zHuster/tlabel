@@ -2,6 +2,7 @@ package com.csdc.runner;
 
 import csdc.info.lda_common.model.enums.DisciplineType;
 import csdc.label.model.NormalizeTopicSummary;
+import jdk.nashorn.internal.ir.annotations.Ignore;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
@@ -22,6 +23,7 @@ import java.util.concurrent.ConcurrentHashMap;
 @Slf4j
 @Component
 @Order(1)
+@Ignore
 public class LabelRunner implements ApplicationRunner {
 
     public static ConcurrentHashMap<DisciplineType, NormalizeTopicSummary> data = new ConcurrentHashMap<>();
