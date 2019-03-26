@@ -8,6 +8,7 @@ import com.csdc.service.CalculateService;
 import com.csdc.util.Similarity;
 import csdc.info.lda_common.model.enums.DisciplineType;
 import csdc.label.model.NormalizeTopicSummary;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.lang.Nullable;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -25,6 +26,7 @@ import java.util.stream.Collectors;
 @Service(version = "1.0.1")
 @org.springframework.stereotype.Service
 @RestController
+@Slf4j
 public class TopicServiceImpl implements TopicService {
 
     @Override
@@ -40,6 +42,7 @@ public class TopicServiceImpl implements TopicService {
             subMap.put(possibilities.get(e),temp.get(e));
             result.put(e,subMap);
         });
+        log.info("获取{}中的所有主题",disciplineType);
         return result;
     }
 
@@ -48,13 +51,12 @@ public class TopicServiceImpl implements TopicService {
     public Map<Integer, Map<Double, List<String>>> getSimilarTopics(
             @PathVariable("topicId") Integer topicId,
             DisciplineType disciplineType) {
-        topicId = 1;
         NormalizeTopicSummary topicSummary = LabelRunner.data.get(DisciplineType.新闻学与传播学);
         if (topicSummary == null) throw new RequestException(RequestError.NO_SUCH_DISCIPLINE);
         double[][] phi = topicSummary.getPhi();
         if (topicId >= phi.length)
             throw new RequestException(RequestError.NO_SUCH_TOPIC);
-        double[] specifiedTopic = phi[1];
+        double[] specifiedTopic = phi[topicId];
         List<Double> similarities = new ArrayList<>();
         Arrays.stream(phi).mapToDouble(e -> Similarity
                 .cosineSimilarty(e, specifiedTopic))
@@ -68,6 +70,7 @@ public class TopicServiceImpl implements TopicService {
             toolMap.put(e, topicSummary.getSummary().get(similarities.indexOf(e)));
             result.put(similarities.indexOf(e), toolMap);
         });
+        log.info("获取{}中主题{}的相似主题",disciplineType,topicId);
         return result;
     }
 }

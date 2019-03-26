@@ -1,6 +1,7 @@
 package com.csdc.service.dubbo;
 
 import com.csdc.entity.json.JProject;
+import com.csdc.entity.json.JProjectInfo;
 import csdc.info.lda_common.model.enums.DisciplineType;
 
 import java.util.List;
@@ -11,5 +12,7 @@ import java.util.List;
  */
 public interface DocumentService {
 
-    List<JProject> getProjectsByTopicId(Integer topicId, DisciplineType disciplineType);
+    List<JProject> findProjectsByTopic(Integer topicId, DisciplineType disciplineType);
+
+    JProjectInfo findProjectInfoById(String projectId);
 }

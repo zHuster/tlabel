@@ -7,6 +7,17 @@
         <result property="year" column="C_YEAR"/>
     </resultMap>
 
+    <resultMap id="projectInfo" type="com.csdc.entity.ProjectInfo">
+        <id property="id" column="C_ID"/>
+        <result property="name" column="C_NAME"/>
+        <result property="year" column="C_YEAR"/>
+        <result property="productType" column="C_PRODUCT_TYPE"/>
+        <result property="discipline" column="C_DISCIPLINE"/>
+        <result property="applicant" column="C_APPLICANT_NAME"/>
+        <result property="agency" column="C_AGENCY_NAME"/>
+        <result property="province" column="C_PROVINCE_NAME"/>
+    </resultMap>
+
 
     <select id="findProjectByIds" resultMap="projectResultMap">
         select C_ID,C_NAME,C_YEAR from T_PROJECT_APPLICATION
@@ -18,6 +29,18 @@
         </where>
     </select>
 
+    <!--特殊字符需要转义w3school标记语言,OGNL字符串与数字之间的自动转换&quot;&quot;-->
+    <!--用标签的属性应该要有get and set方法String类型的没有-->
+    <select id="findProjectInfoById" resultMap="projectInfo" >
+        select C_ID,C_NAME,C_YEAR,C_PRODUCT_TYPE,C_DISCIPLINE,C_APPLICANT_NAME,C_AGENCY_NAME,C_PROVINCE_NAME
+        from T_PROJECT_APPLICATION
+        <where>
+            C_ID =
+            <if test="id!=null and id.trim()!=''">
+            #{id}
+            </if>
+        </where>
+    </select>
 
 
 </mapper>
