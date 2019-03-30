@@ -9,11 +9,14 @@ package com.csdc.exception;
 
 public class RequestException extends RuntimeException {
 
-    public RequestException() {
-        super();
-    }
+    private RequestError requestError;
 
     public RequestException(RequestError requestError) {
         super(requestError.toString());
+        this.requestError=requestError;
+    }
+
+    public RequestError getRequestError() {
+        return requestError;
     }
 }

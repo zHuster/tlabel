@@ -50,15 +50,16 @@ public class DocumentServiceImpl implements DocumentService {
     public List<JProject> findProjectsByTopic(Integer topicId, DisciplineType disciplineType) {
         NormalizeTopicSummary topicSummary = LabelRunner.data.get(DisciplineType.新闻学与传播学);
         double[][] theta = topicSummary.getTheta();
+        topicId=100;
         if (topicId >= theta[0].length) throw new RequestException(RequestError.WRONG_TOPIC_ID);
         List<Double> specifiedPro = new ArrayList<>();
         for (int i = 0; i < theta.length; i++) {
             specifiedPro.add(theta[i][topicId]);
         }
-        List<Double> topTen = specifiedPro.stream().sorted(Comparator.reverseOrder())
+        List<Double> topFifty = specifiedPro.stream().sorted(Comparator.reverseOrder())
                 .limit(50)
                 .collect(Collectors.toList());
-        List<String> ids = specifiedPro.stream().filter(topTen::contains)
+        List<String> ids = specifiedPro.stream().filter(topFifty::contains)
                 .map(specifiedPro::indexOf).map(topicSummary.getDocuments()::get)
                 .map(Documents.Document::getProjectId)
                 .map(String::valueOf).collect(Collectors.toList());
@@ -91,6 +92,6 @@ public class DocumentServiceImpl implements DocumentService {
      */
     private void validateStringArgs(String projectId) {
         if (StringUtils.isEmpty(projectId))
-            throw new RequestException(RequestError.STRING_ARGS_ILLEGAL);
+            throw new RequestException(RequestError.PROJECT_ID_IS_ILLEGAL);
     }
 }

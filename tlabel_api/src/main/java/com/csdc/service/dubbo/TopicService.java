@@ -17,7 +17,6 @@ public interface TopicService {
      * 根据学科查询主题
      *
      * @param disciplineType
-     * @return
      */
     Map<Integer, Map<Double,List<String>>> getTopicsByDiscipline(DisciplineType disciplineType);
 
@@ -26,7 +25,12 @@ public interface TopicService {
      *
      * @param topicId
      * @param disciplineType
-     * @return
      */
     Map<Integer, Map<Double,List<String>>> getSimilarTopics(Integer topicId, DisciplineType disciplineType);
+
+    /**
+     * 根据主题id获取主题详情
+     * @param ids
+     */
+    Map<Integer,List<String>> findTopicsByIds(List<Integer> ids,String disciplineType);
 }

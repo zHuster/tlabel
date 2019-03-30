@@ -10,6 +10,7 @@ import csdc.info.lda_common.model.enums.DisciplineType;
 import csdc.label.model.NormalizeTopicSummary;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.lang.Nullable;
+import org.springframework.util.ObjectUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
@@ -23,7 +24,7 @@ import java.util.stream.Collectors;
  * <p>
  * 服务端主题标签接口的实现者
  */
-@Service(version = "1.0.1")
+@Service(version = "2.0.0")
 @org.springframework.stereotype.Service
 @RestController
 @Slf4j
@@ -71,6 +72,22 @@ public class TopicServiceImpl implements TopicService {
             result.put(similarities.indexOf(e), toolMap);
         });
         log.info("获取{}中主题{}的相似主题",disciplineType,topicId);
+        return result;
+    }
+
+    /**
+     * 根据id获取项目标签
+     *
+     * @param ids
+     */
+    @Nullable
+    @Override
+    public Map<Integer,List<String>> findTopicsByIds(List<Integer> ids,String disciplineType){
+        if(ObjectUtils.isEmpty(ids)) throw new RequestException(RequestError.IDS_IS_EMPETY);
+        NormalizeTopicSummary topicSummary = LabelRunner.data.get(DisciplineType.新闻学与传播学);
+        Map<Integer,List<String>> summary=topicSummary.getSummary();
+        Map<Integer,List<String>> result=new HashMap<>();
+        ids.parallelStream().filter(e->e!=null).forEach(e-> result.put(e,summary.get(e)));
         return result;
     }
 }

@@ -9,5 +9,6 @@ public enum RequestError {
     NO_SUCH_TOPIC,
     NO_SUCH_DISCIPLINE,
     WRONG_TOPIC_ID,
-    STRING_ARGS_ILLEGAL
+    PROJECT_ID_IS_ILLEGAL,
+    IDS_IS_EMPETY
 }
