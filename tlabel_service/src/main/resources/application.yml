@@ -47,8 +47,8 @@ dubbo:
     port: 12345
     threads: 10
   registry:
-    protocol: zookeeper
-    address: 192.168.88.97:30000
+    protocol: nacos
+    address: 192.168.88.98:30002
     timeout: 30000
   scan:
     basePackages: com.csdc.service.dubbo
