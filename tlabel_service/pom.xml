@@ -87,7 +87,18 @@
                 </exclusion>
             </exclusions>
         </dependency>
-
+        <!-- Dubbo Nacos registry dependency -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>dubbo-registry-nacos</artifactId>
+            <version>0.0.1</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/com.alibaba.nacos/nacos-client -->
+        <dependency>
+            <groupId>com.alibaba.nacos</groupId>
+            <artifactId>nacos-client</artifactId>
+            <version>0.9.0</version>
+        </dependency>
         <dependency>
             <groupId>com.csdc</groupId>
             <artifactId>label</artifactId>

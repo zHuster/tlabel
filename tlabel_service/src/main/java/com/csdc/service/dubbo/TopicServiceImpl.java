@@ -26,13 +26,11 @@ import java.util.stream.Collectors;
  */
 @Service(version = "2.0.0")
 @org.springframework.stereotype.Service
-@RestController
 @Slf4j
 public class TopicServiceImpl implements TopicService {
 
     @Override
     @Nullable
-    @GetMapping("hh")
     public Map<Integer, Map<Double,List<String>>> getTopicsByDiscipline(DisciplineType disciplineType) {
         Map<Integer, Map<Double,List<String>>> result=new HashMap<>();
         double[][] theta=LabelRunner.data.get(DisciplineType.新闻学与传播学).getTheta();
@@ -47,7 +45,7 @@ public class TopicServiceImpl implements TopicService {
         return result;
     }
 
-    @GetMapping("res/{topicId}")
+    @Nullable
     @Override
     public Map<Integer, Map<Double, List<String>>> getSimilarTopics(
             @PathVariable("topicId") Integer topicId,

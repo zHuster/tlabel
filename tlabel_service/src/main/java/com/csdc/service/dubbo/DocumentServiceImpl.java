@@ -15,9 +15,7 @@ import csdc.nlp.lda.model.Documents;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.StringUtils;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -30,9 +28,9 @@ import java.util.stream.Stream;
  * @author zhangzhi
  * @since <pre>2019/3/25</pre>
  */
-@RestController
 @Slf4j
 @Service(version = "1.0.0")
+@org.springframework.stereotype.Service
 public class DocumentServiceImpl implements DocumentService {
 
     @Autowired
@@ -45,12 +43,11 @@ public class DocumentServiceImpl implements DocumentService {
      * @param disciplineType
      * @return
      */
-    @GetMapping("ff")
     @Override
     public List<JProject> findProjectsByTopic(Integer topicId, DisciplineType disciplineType) {
         NormalizeTopicSummary topicSummary = LabelRunner.data.get(DisciplineType.新闻学与传播学);
         double[][] theta = topicSummary.getTheta();
-        topicId=100;
+        topicId = 100;
         if (topicId >= theta[0].length) throw new RequestException(RequestError.WRONG_TOPIC_ID);
         List<Double> specifiedPro = new ArrayList<>();
         for (int i = 0; i < theta.length; i++) {
@@ -74,7 +71,6 @@ public class DocumentServiceImpl implements DocumentService {
      * @param projectId
      * @return
      */
-    @GetMapping("l/{projectId}")
     @Override
     public JProjectInfo findProjectInfoById(@PathVariable("projectId") String projectId) {
         validateStringArgs(projectId);
