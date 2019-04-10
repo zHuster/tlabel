@@ -11,9 +11,6 @@ import csdc.label.model.NormalizeTopicSummary;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.lang.Nullable;
 import org.springframework.util.ObjectUtils;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -24,31 +21,31 @@ import java.util.stream.Collectors;
  * <p>
  * 服务端主题标签接口的实现者
  */
-@Service(version = "2.0.0")
+@Service(version = "2.0.0",group = "tlabel")
 @org.springframework.stereotype.Service
 @Slf4j
 public class TopicServiceImpl implements TopicService {
 
     @Override
     @Nullable
-    public Map<Integer, Map<Double,List<String>>> getTopicsByDiscipline(DisciplineType disciplineType) {
-        Map<Integer, Map<Double,List<String>>> result=new HashMap<>();
-        double[][] theta=LabelRunner.data.get(DisciplineType.新闻学与传播学).getTheta();
-        Map<Integer,Double> possibilities=CalculateService.getPossibilities(theta);
+    public Map<Integer, Map<Double, List<String>>> getTopicsByDiscipline(DisciplineType disciplineType) {
+        Map<Integer, Map<Double, List<String>>> result = new HashMap<>();
+        double[][] theta = LabelRunner.data.get(DisciplineType.新闻学与传播学).getTheta();
+        Map<Integer, Double> possibilities = CalculateService.getPossibilities(theta);
         Map<Integer, List<String>> temp = LabelRunner.data.get(DisciplineType.新闻学与传播学).getSummary();
-        temp.keySet().stream().forEach(e->{
-            Map<Double,List<String>> subMap=new HashMap<>();
-            subMap.put(possibilities.get(e),temp.get(e));
-            result.put(e,subMap);
+        temp.keySet().stream().forEach(e -> {
+            Map<Double, List<String>> subMap = new HashMap<>();
+            subMap.put(possibilities.get(e), temp.get(e));
+            result.put(e, subMap);
         });
-        log.info("获取{}中的所有主题",disciplineType);
+        log.info("获取{}中的所有主题", disciplineType);
         return result;
     }
 
     @Nullable
     @Override
     public Map<Integer, Map<Double, List<String>>> getSimilarTopics(
-            @PathVariable("topicId") Integer topicId,
+            Integer topicId,
             DisciplineType disciplineType) {
         NormalizeTopicSummary topicSummary = LabelRunner.data.get(DisciplineType.新闻学与传播学);
         if (topicSummary == null) throw new RequestException(RequestError.NO_SUCH_DISCIPLINE);
@@ -69,7 +66,7 @@ public class TopicServiceImpl implements TopicService {
             toolMap.put(e, topicSummary.getSummary().get(similarities.indexOf(e)));
             result.put(similarities.indexOf(e), toolMap);
         });
-        log.info("获取{}中主题{}的相似主题",disciplineType,topicId);
+        log.info("获取{}中主题{}的相似主题", disciplineType, topicId);
         return result;
     }
 
@@ -80,12 +77,12 @@ public class TopicServiceImpl implements TopicService {
      */
     @Nullable
     @Override
-    public Map<Integer,List<String>> findTopicsByIds(List<Integer> ids,String disciplineType){
-        if(ObjectUtils.isEmpty(ids)) throw new RequestException(RequestError.IDS_IS_EMPETY);
+    public Map<Integer, List<String>> findTopicsByIds(List<Integer> ids, String disciplineType) {
+        if (ObjectUtils.isEmpty(ids)) throw new RequestException(RequestError.IDS_IS_EMPTY);
         NormalizeTopicSummary topicSummary = LabelRunner.data.get(DisciplineType.新闻学与传播学);
-        Map<Integer,List<String>> summary=topicSummary.getSummary();
-        Map<Integer,List<String>> result=new HashMap<>();
-        ids.parallelStream().filter(e->e!=null).forEach(e-> result.put(e,summary.get(e)));
+        Map<Integer, List<String>> summary = topicSummary.getSummary();
+        Map<Integer, List<String>> result = new HashMap<>();
+        ids.parallelStream().filter(e -> e != null).forEach(e -> result.put(e, summary.get(e)));
         return result;
     }
 }

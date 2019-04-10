@@ -15,7 +15,6 @@ import csdc.nlp.lda.model.Documents;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.StringUtils;
-import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -29,7 +28,7 @@ import java.util.stream.Stream;
  * @since <pre>2019/3/25</pre>
  */
 @Slf4j
-@Service(version = "1.0.0")
+@Service(version = "1.0.0",group = "tlabel")
 @org.springframework.stereotype.Service
 public class DocumentServiceImpl implements DocumentService {
 
@@ -47,7 +46,6 @@ public class DocumentServiceImpl implements DocumentService {
     public List<JProject> findProjectsByTopic(Integer topicId, DisciplineType disciplineType) {
         NormalizeTopicSummary topicSummary = LabelRunner.data.get(DisciplineType.新闻学与传播学);
         double[][] theta = topicSummary.getTheta();
-        topicId = 100;
         if (topicId >= theta[0].length) throw new RequestException(RequestError.WRONG_TOPIC_ID);
         List<Double> specifiedPro = new ArrayList<>();
         for (int i = 0; i < theta.length; i++) {
@@ -72,7 +70,7 @@ public class DocumentServiceImpl implements DocumentService {
      * @return
      */
     @Override
-    public JProjectInfo findProjectInfoById(@PathVariable("projectId") String projectId) {
+    public JProjectInfo findProjectInfoById(String projectId) {
         validateStringArgs(projectId);
         ProjectInfo projectInfo = projectMapper.findProjectInfoById(projectId);
         Optional<JProjectInfo> jProjectInfo = Stream.of(projectInfo).

@@ -7,5 +7,7 @@ package com.csdc.exception;
  * 处理过程异常
  */
 public enum OperateError {
-    MODEL_NOT_CONTAINS_THETA
+    MODEL_NOT_CONTAINS_THETA,
+    FAIL_TO_MAKEDIRS,
+    WRONG_FIEL_EXIST_IN_FOLDER
 }

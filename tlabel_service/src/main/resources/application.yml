@@ -33,7 +33,7 @@ mybatis:
 # actuator的监控配置
 management:
   server:
-    port: 10000
+    port: 9999
   endpoint:
     shutdown:
       enabled: false
@@ -44,14 +44,14 @@ dubbo:
     name: tlabel
   protocol:
     name: dubbo
-    port: 12345
+    port: 20000
     threads: 10
   registry:
     protocol: nacos
-    address: 192.168.88.98:30002
+    address: 192.168.88.100:30002
     timeout: 30000
   scan:
     basePackages: com.csdc.service.dubbo
 
 server:
-  port: 8886
+  port: 8888

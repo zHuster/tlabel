@@ -10,5 +10,5 @@ public enum RequestError {
     NO_SUCH_DISCIPLINE,
     WRONG_TOPIC_ID,
     PROJECT_ID_IS_ILLEGAL,
-    IDS_IS_EMPETY
+    IDS_IS_EMPTY
 }
