@@ -40,11 +40,10 @@ public class DocumentServiceImpl implements DocumentService {
      *
      * @param topicId
      * @param disciplineType
-     * @return
      */
     @Override
     public List<JProject> findProjectsByTopic(Integer topicId, DisciplineType disciplineType) {
-        NormalizeTopicSummary topicSummary = LabelRunner.data.get(DisciplineType.新闻学与传播学);
+        NormalizeTopicSummary topicSummary = LabelRunner.data.get(disciplineType);
         double[][] theta = topicSummary.getTheta();
         if (topicId >= theta[0].length) throw new RequestException(RequestError.WRONG_TOPIC_ID);
         List<Double> specifiedPro = new ArrayList<>();
@@ -67,7 +66,6 @@ public class DocumentServiceImpl implements DocumentService {
      * 获取主题项目详情
      *
      * @param projectId
-     * @return
      */
     @Override
     public JProjectInfo findProjectInfoById(String projectId) {

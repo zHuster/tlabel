@@ -62,7 +62,6 @@ public class LabelRunner implements ApplicationRunner {
                 log.info("成功读取所有模型");
                 break;
             }
-
         }
     }
 

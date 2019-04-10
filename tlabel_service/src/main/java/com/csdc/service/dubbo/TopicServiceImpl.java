@@ -30,9 +30,9 @@ public class TopicServiceImpl implements TopicService {
     @Nullable
     public Map<Integer, Map<Double, List<String>>> getTopicsByDiscipline(DisciplineType disciplineType) {
         Map<Integer, Map<Double, List<String>>> result = new HashMap<>();
-        double[][] theta = LabelRunner.data.get(DisciplineType.新闻学与传播学).getTheta();
+        double[][] theta = LabelRunner.data.get(disciplineType).getTheta();
         Map<Integer, Double> possibilities = CalculateService.getPossibilities(theta);
-        Map<Integer, List<String>> temp = LabelRunner.data.get(DisciplineType.新闻学与传播学).getSummary();
+        Map<Integer, List<String>> temp = LabelRunner.data.get(disciplineType).getSummary();
         temp.keySet().stream().forEach(e -> {
             Map<Double, List<String>> subMap = new HashMap<>();
             subMap.put(possibilities.get(e), temp.get(e));
@@ -47,7 +47,7 @@ public class TopicServiceImpl implements TopicService {
     public Map<Integer, Map<Double, List<String>>> getSimilarTopics(
             Integer topicId,
             DisciplineType disciplineType) {
-        NormalizeTopicSummary topicSummary = LabelRunner.data.get(DisciplineType.新闻学与传播学);
+        NormalizeTopicSummary topicSummary = LabelRunner.data.get(disciplineType);
         if (topicSummary == null) throw new RequestException(RequestError.NO_SUCH_DISCIPLINE);
         double[][] phi = topicSummary.getPhi();
         if (topicId >= phi.length)
@@ -79,7 +79,7 @@ public class TopicServiceImpl implements TopicService {
     @Override
     public Map<Integer, List<String>> findTopicsByIds(List<Integer> ids, String disciplineType) {
         if (ObjectUtils.isEmpty(ids)) throw new RequestException(RequestError.IDS_IS_EMPTY);
-        NormalizeTopicSummary topicSummary = LabelRunner.data.get(DisciplineType.新闻学与传播学);
+        NormalizeTopicSummary topicSummary = LabelRunner.data.get(DisciplineType.valueOf(disciplineType));
         Map<Integer, List<String>> summary = topicSummary.getSummary();
         Map<Integer, List<String>> result = new HashMap<>();
         ids.parallelStream().filter(e -> e != null).forEach(e -> result.put(e, summary.get(e)));
