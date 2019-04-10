@@ -37,7 +37,12 @@ public class LabelRunner implements ApplicationRunner {
 
     private ExecutorService executors = Executors.newFixedThreadPool(Constants.THREAD_COUNTS);
 
-
+    /**
+     * 读取文件下所有模型，未读取完成则自旋等待
+     *
+     * @param args
+     * @throws Exception
+     */
     @Override
     public void run(ApplicationArguments args) throws Exception {
 
@@ -52,6 +57,13 @@ public class LabelRunner implements ApplicationRunner {
             log.info("读取{}成功", e.getName().split("\\.")[0]);
         });
         executors.shutdown();
+        for (;;) {
+            if (executors.isTerminated()) {
+                log.info("成功读取所有模型");
+                break;
+            }
+
+        }
     }
 
     /**
@@ -66,7 +78,7 @@ public class LabelRunner implements ApplicationRunner {
         try {
             ois = new ObjectInputStream(new FileInputStream(modelPath));
             topicSummary = (NormalizeTopicSummary) ois.readObject();
-            data.put(DisciplineType.新闻学与传播学, topicSummary);
+            data.put(DisciplineType.valueOf(fileName.split("\\.")[0]), topicSummary);
         } catch (Exception e) {
             log.error("读取模型{}失败", fileName);
         } finally {
