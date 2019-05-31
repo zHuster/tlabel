@@ -8,7 +8,7 @@ public class Constants {
     /**
      * 模型存放地址
      */
-    public static final String MODEL_LOCATION = "tlabel_service/data/model";
+    public static final String MODEL_LOCATION = "./file/model";
     /**
      * 启动时线程池的大小
      */

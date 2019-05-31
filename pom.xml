@@ -27,7 +27,6 @@
     </properties>
 
     <dependencies>
-
         <dependency>
             <groupId>info.csdc</groupId>
             <artifactId>lda_common</artifactId>
@@ -39,6 +38,16 @@
             <artifactId>lombok</artifactId>
             <version>1.18.4</version>
             <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>info.csdc</groupId>
+            <artifactId>label</artifactId>
+            <version>0.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>info.csdc</groupId>
+            <artifactId>lda</artifactId>
+            <version>0.0.1</version>
         </dependency>
     </dependencies>
 
@@ -68,13 +77,13 @@
         <repository>
             <id>csdc</id>
             <name>csdc</name>
-            <url>http://192.168.88.200:8081/repository/csdc/</url>
+            <url>http://192.168.88.102:8081/repository/csdc/</url>
         </repository>
         <!--CSDC Snapshots Repo-->
         <repository>
             <id>csdc-snapshots</id>
             <name>csdc-snapshots</name>
-            <url>http://192.168.88.200:8081/repository/csdc-snapshots/</url>
+            <url>http://192.168.88.102:8081/repository/csdc-snapshots/</url>
         </repository>
     </repositories>
 
@@ -87,23 +96,4 @@
             <!--<url>https://repo.maven.apache.org/maven2/</url>-->
         </pluginRepository>
     </pluginRepositories>
-
-<!--
-    <profiles>
-    <profile>
-        <id>jdk‐1.7</id>
-        <activation>
-            <activeByDefault>true</activeByDefault>
-            <jdk>1.7</jdk>
-        </activation>
-        <properties>
-            <maven.compiler.source>1.7</maven.compiler.source>
-            <maven.compiler.target>1.7</maven.compiler.target>
-            <maven.compiler.compilerVersion>1.7</maven.compiler.compilerVersion>
-        </properties>
-    </profile>
-    </profiles>
--->
-
-
 </project>

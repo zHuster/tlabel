@@ -17,7 +17,7 @@ import java.util.Map;
 /**
  * @author zhangzhi
  * @since <pre>2019.3.10</pre>
- *
+ * <p>
  * 配置druid的后台监控
  */
 @Configuration
@@ -31,7 +31,6 @@ public class DruidConfig {
 
     /**
      * 配置一个管理后台的servlet
-     * @return
      */
     @Bean
     public ServletRegistrationBean statViewServlet() {
@@ -40,14 +39,12 @@ public class DruidConfig {
         initParams.put("loginUsername", "admin");
         initParams.put("loginPassword", "csdc702");
         initParams.put("allow", "");
-//        initParams.put("deny", "192.168.88.11");
         bean.setInitParameters(initParams);
         return bean;
     }
 
     /**
      * 配置一个web监控的filter
-     * @return
      */
     @Bean
     public FilterRegistrationBean webStatFilter() {
@@ -59,4 +56,5 @@ public class DruidConfig {
         bean.setUrlPatterns(Arrays.asList("/*"));
         return bean;
     }
+
 }

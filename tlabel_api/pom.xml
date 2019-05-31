@@ -6,10 +6,14 @@
         <artifactId>tlabel</artifactId>
         <groupId>com.csdc</groupId>
         <version>1.0-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
+    <groupId>info.csdc</groupId>
     <artifactId>tlabel_api</artifactId>
+    <description>Common interfaces between customer and provider</description>
+
     <properties>
         <java.version>1.7</java.version>
     </properties>

@@ -9,5 +9,5 @@ package com.csdc.exception;
 public enum OperateError {
     MODEL_NOT_CONTAINS_THETA,
     FAIL_TO_MAKEDIRS,
-    WRONG_FIEL_EXIST_IN_FOLDER
+    WRONG_FILE_EXIST_IN_FOLDER
 }

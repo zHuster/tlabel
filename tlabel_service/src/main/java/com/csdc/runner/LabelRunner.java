@@ -45,18 +45,18 @@ public class LabelRunner implements ApplicationRunner {
      */
     @Override
     public void run(ApplicationArguments args) throws Exception {
-
         File file = new File(Constants.MODEL_LOCATION);
         if (!file.exists() && !file.mkdirs())
             throw new OperateException(OperateError.FAIL_TO_MAKEDIRS);
         File[] files = file.listFiles();
         Arrays.stream(files).forEach(e -> {
             if (!e.getName().endsWith("model"))
-                throw new OperateException(OperateError.WRONG_FIEL_EXIST_IN_FOLDER);
+                throw new OperateException(OperateError.WRONG_FILE_EXIST_IN_FOLDER);
             executors.submit(() -> loadModels(e.getAbsolutePath(), e.getName()));
             log.info("读取{}成功", e.getName().split("\\.")[0]);
         });
         executors.shutdown();
+        log.info("主题模型加载中...");
         for (;;) {
             if (executors.isTerminated()) {
                 log.info("成功读取所有模型");

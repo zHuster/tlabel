@@ -44,14 +44,29 @@ dubbo:
     name: tlabel
   protocol:
     name: dubbo
-    port: 20000
+    port: 20080
     threads: 10
   registry:
     protocol: nacos
-    address: 192.168.88.100:30002
     timeout: 30000
   scan:
     basePackages: com.csdc.service.dubbo
-
+---
+#开发环境
+spring:
+  profiles: dev
+dubbo:
+  registry:
+    address: 192.168.88.100:30002
 server:
-  port: 8888
+  port: 8988
+
+---
+#生产环境
+spring:
+  profiles: prod
+dubbo:
+  registry:
+    address: 192.168.88.98:30002
+server:
+  port: 8688

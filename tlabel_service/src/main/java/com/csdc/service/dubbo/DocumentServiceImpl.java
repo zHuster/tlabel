@@ -28,7 +28,7 @@ import java.util.stream.Stream;
  * @since <pre>2019/3/25</pre>
  */
 @Slf4j
-@Service(version = "1.0.0",group = "tlabel")
+@Service(version = "1.0.0", group = "tlabel")
 @org.springframework.stereotype.Service
 public class DocumentServiceImpl implements DocumentService {
 
@@ -77,11 +77,6 @@ public class DocumentServiceImpl implements DocumentService {
         return jProjectInfo.get();
     }
 
-    /**
-     * 字符串验证
-     *
-     * @param projectId
-     */
     private void validateStringArgs(String projectId) {
         if (StringUtils.isEmpty(projectId))
             throw new RequestException(RequestError.PROJECT_ID_IS_ILLEGAL);

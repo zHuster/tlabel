@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<configuration>
+<configuration scan="false" >
     <include resource="org/springframework/boot/logging/logback/base.xml" />
+
+    <!--定义日志的根目录-->
+    <property name="LOG_HOME" value="./log"/>
+    <!--定义日志文件名称-->
+    <property name="appName" value="app.log"/>
 
     <appender name="dailyRollingFileAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <File>./logs/app.log</File>
@@ -14,7 +19,7 @@
         </encoder>
     </appender>
 
-    <springProfile name="develop">
+    <springProfile name="dev">
         <logger name="info.csdc" level="DEBUG" />
     </springProfile>
 

@@ -8,12 +8,10 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 
 @MapperScan("com.csdc.mapper")
 @SpringBootApplication
-@EnableScheduling  //开启定时器
+@EnableScheduling
 public class TlabelApplication {
-
     public static void main(String[] args) {
         SpringApplication.run(TlabelApplication.class, args);
     }
-
 
 }

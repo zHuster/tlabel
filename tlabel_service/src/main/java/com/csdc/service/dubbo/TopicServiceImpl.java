@@ -9,7 +9,6 @@ import com.csdc.util.Similarity;
 import csdc.info.lda_common.model.enums.DisciplineType;
 import csdc.label.model.NormalizeTopicSummary;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.lang.Nullable;
 import org.springframework.util.ObjectUtils;
 
 import java.util.*;
@@ -21,13 +20,12 @@ import java.util.stream.Collectors;
  * <p>
  * 服务端主题标签接口的实现者
  */
-@Service(version = "2.0.0",group = "tlabel")
+@Service(version = "1.0.0", group = "tlabel")
 @org.springframework.stereotype.Service
 @Slf4j
 public class TopicServiceImpl implements TopicService {
 
     @Override
-    @Nullable
     public Map<Integer, Map<Double, List<String>>> getTopicsByDiscipline(DisciplineType disciplineType) {
         Map<Integer, Map<Double, List<String>>> result = new HashMap<>();
         double[][] theta = LabelRunner.data.get(disciplineType).getTheta();
@@ -42,7 +40,6 @@ public class TopicServiceImpl implements TopicService {
         return result;
     }
 
-    @Nullable
     @Override
     public Map<Integer, Map<Double, List<String>>> getSimilarTopics(
             Integer topicId,
@@ -57,7 +54,8 @@ public class TopicServiceImpl implements TopicService {
         Arrays.stream(phi).mapToDouble(e -> Similarity
                 .cosineSimilarty(e, specifiedTopic))
                 .forEach(similarities::add);
-        List<Double> topTen = similarities.parallelStream().filter(e -> e != 1)
+
+        List<Double> topTen = similarities.parallelStream().filter(e -> similarities.indexOf(e) != topicId)
                 .sorted(Comparator.reverseOrder())
                 .limit(10).collect(Collectors.toList());
         Map<Integer, Map<Double, List<String>>> result = new LinkedHashMap<>();
@@ -75,14 +73,14 @@ public class TopicServiceImpl implements TopicService {
      *
      * @param ids
      */
-    @Nullable
     @Override
     public Map<Integer, List<String>> findTopicsByIds(List<Integer> ids, String disciplineType) {
         if (ObjectUtils.isEmpty(ids)) throw new RequestException(RequestError.IDS_IS_EMPTY);
         NormalizeTopicSummary topicSummary = LabelRunner.data.get(DisciplineType.valueOf(disciplineType));
         Map<Integer, List<String>> summary = topicSummary.getSummary();
         Map<Integer, List<String>> result = new HashMap<>();
-        ids.parallelStream().filter(e -> e != null).forEach(e -> result.put(e, summary.get(e)));
+        ids.parallelStream().filter(Objects::nonNull).forEach(e -> result.put(e, summary.get(e)));
+        log.info("获取{}的主题标签", disciplineType);
         return result;
     }
 }
